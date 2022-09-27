@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>SafeHome</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Flaticon Font -->
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.min.css" rel="stylesheet">
+</head>
+<style>
+    .cadastro-form{
+        background-color: rgba(0, 0, 0, 0.9);
+        position:relative;
+        top: 500px;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 80px;
+        border-radius: 15px;
+    }
+
+    button{
+        background-color: dodgerblue;
+        border: none;
+        padding: 15px;
+        width: 100%;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+    }
+
+</style>
+
+<body class="bg-white">
+    <!-- Navbar Start -->
+    <div class="container-fluid p-0 nav-bar">
+        <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+            <a href="" class="navbar-brand">
+                <h1 class="m-0 display-4 font-weight-bold text-uppercase text-white">SafeHome</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto p-4 bg-secondary">
+                    <a href="index.html" class="nav-item nav-link">Início</a>
+                    <a href="minha-casa.html" class="nav-item nav-link">Minha Casa</a>
+                    <a href="meu-perfil.html" class="nav-item nav-link active">Meu Perfil</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header2 mb-5">
+        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
+            <h4 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase font-weight-bold">Meu Perfil</h4>
+            <div class="d-inline-flex">
+                <p class="m-0 text-white"><a class="text-white" href="index.html">Início</a></p>
+                <p class="m-0 text-white px-2">/</p>
+                <p class="m-0 text-white">Meu Perfil</p>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Contact Start -->
+    <div class="container pt-5">
+        <div class="d-flex flex-column text-center mb-5">
+            <h4 class="text-primary font-weight-bold">Dados Cadastrados</h4>
+            <h4 class="display-4 font-weight-bold">Informações do Usuário</h4>
+        </div>
+        <div class="row">
+                <div class="container">
+                    <div class= "cadastro-form">
+                        <form method="post" class="form-signin">
+                            <input name="acao" type="hidden" value="inserir"/>
+                                <div class="form-group">
+                                    <br>
+                                    <input class="form-control" name="nome" type="text" placeholder="Nome" value="Melissa">
+                                    <br>
+                                    <input class="form-control" name="sobrenome" type="text" placeholder="Sobrenome" value="Akatuka de Oliveira">
+                                    <br>
+                                    <input class="form-control" name="celular" type="text" placeholder="Celular" value="11940107576">
+                                    <br>
+                                    <input class="form-control" name="usuário" type="text" placeholder="Usuário" value="melissa.akatuka">
+                                    <br>
+                                    <input class="form-control" name="senha" type="text" placeholder="Senha" value="IFSP123">
+                                    <br>
+                                    <textarea cols="20" rows="5" placeholder="Mensagem Padrão - SOS">Alerta! Uma detecção de movimento ocorreu às 19:34. O botão de SOS foi acionado, por favor verificar a casa. </textarea>
+                                </div>
+                            <button>Atualizar</button>
+                        </form>
+                    </div>
+                </div>  
+        </div>
+    </div>
+    <!-- Contact End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-outline-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
