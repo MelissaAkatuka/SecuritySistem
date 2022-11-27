@@ -1,0 +1,81 @@
+package com.tcc.safehome;
+
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.tcc.safehome.domain.Ambiente;
+import com.tcc.safehome.domain.Casa;
+import com.tcc.safehome.domain.DeteccaoMovimento;
+import com.tcc.safehome.domain.SOS;
+import com.tcc.safehome.domain.Usuario;
+import com.tcc.safehome.repositories.AmbienteRepository;
+import com.tcc.safehome.repositories.CasaRepository;
+import com.tcc.safehome.repositories.DeteccaoMovimentoRepository;
+import com.tcc.safehome.repositories.SOSRepository;
+import com.tcc.safehome.repositories.UsuarioRepository;
+
+@SpringBootApplication
+public class SafehomeApplication implements CommandLineRunner{
+	
+	@Autowired
+	private AmbienteRepository ambienteRepository;
+	
+	@Autowired
+	private CasaRepository casaRepository;
+	
+	@Autowired
+	private DeteccaoMovimentoRepository deteccaoMovimentoRepository;
+	
+	@Autowired
+	private SOSRepository SOSRepository;
+	
+	@Autowired
+	private UsuarioRepository usuarioRepository;
+
+	public static void main(String[] args) {
+		SpringApplication.run(SafehomeApplication.class, args);
+	}
+	
+	@Override
+	public void run(String... args) throws Exception{
+		
+//		//Instanciação:
+//		
+//		//USUARIO
+//		Usuario usuario1 = new Usuario(null, "Melissa", "Akatuka", "akatukamel", "123456ak", "11940107576");
+////		Usuario usuario2 = new Usuario(null, "Maya", "James", "james_m", "123456a", "1190876547");
+//		usuarioRepository.saveAll(Arrays.asList(usuario1));
+//		
+//		//CASA
+//		Casa casa1 = new Casa(null, "1", "1", usuario1);
+//		casaRepository.saveAll(Arrays.asList(casa1));
+//		
+//		//AMBIENTE
+//		Ambiente ambiente1 = new Ambiente(null, "Cozinha", "A0", casa1);
+//		Ambiente ambiente2 = new Ambiente(null, "Sala", "15", casa1);
+//		ambienteRepository.saveAll(Arrays.asList(ambiente1, ambiente2));
+//		
+//		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+//		
+//		//DETECCAO_MOVIMENTO
+//		DeteccaoMovimento deteccao1 = new DeteccaoMovimento(null, sdf.parse("13/11/2022 10:32"), ambiente1);
+//		DeteccaoMovimento deteccao2 = new DeteccaoMovimento(null, sdf.parse("13/11/2022 11:00"), ambiente1);
+//		deteccaoMovimentoRepository.saveAll(Arrays.asList(deteccao1, deteccao2));
+//		
+//		//SOS
+//		SOS sos1 = new SOS(null, "Alerta, você está recebendo essa mensagem porque houve uma detecção de movimento.", "11990876598", "11990876598", "11990876598", usuario1);
+//		SOSRepository.saveAll(Arrays.asList(sos1));
+//		
+//		//associando a casa aos seus ambientes criados
+//		casa1.getAmbientes().addAll(Arrays.asList(ambiente1, ambiente2));
+//		//associando o ambiente às suas detecções de movimento realizadas
+//		ambiente1.getDeteccoesMovimento().addAll(Arrays.asList(deteccao1, deteccao2));
+		
+	}
+
+}

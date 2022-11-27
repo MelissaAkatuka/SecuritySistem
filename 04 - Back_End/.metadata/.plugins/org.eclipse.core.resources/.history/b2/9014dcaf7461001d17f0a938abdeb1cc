@@ -1,0 +1,84 @@
+package com.tcc.safehome.domain;
+
+import java.io.Serializable;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Objects;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
+public class DeteccaoMovimento implements Serializable{
+	private static final long serialVersionUID = 1L;
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer id;
+	
+	private String ultimaDeteccao;
+	
+//	SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+//	
+//	try {
+//	    Date date = formatter.parse(ultimaDeteccao);
+//	} catch (ParseException e) {
+//	    //handle exception if date is not in "dd-MM-yyyy" format
+//	}
+	
+	@ManyToOne
+	@JoinColumn(name="AMB_ID")
+	private Ambiente ambientes;
+	
+	public DeteccaoMovimento() {
+	}
+	
+	public DeteccaoMovimento(Integer id, String ultimaDeteccao, Ambiente ambientes) {
+		super();
+		this.id = id;
+		this.ultimaDeteccao = ultimaDeteccao;
+		this.ambientes = ambientes;
+	}
+
+	public Integer getId() {
+		return id;
+	}
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	public String getUltimaDeteccao() {
+		return ultimaDeteccao;
+	}
+	public void setUltimaDeteccao(String ultimaDeteccao) {
+		this.ultimaDeteccao = ultimaDeteccao;
+	}
+	public Ambiente getAmbientes() {
+		return ambientes;
+	}
+
+	public void setAmbientes(Ambiente ambientes) {
+		this.ambientes = ambientes;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(id);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DeteccaoMovimento other = (DeteccaoMovimento) obj;
+		return Objects.equals(id, other.id);
+	}
+}
