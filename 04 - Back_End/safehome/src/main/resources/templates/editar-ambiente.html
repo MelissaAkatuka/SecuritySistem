@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>SafeHome</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free Website Template" name="keywords">
+    <meta content="Free Website Template" name="description">
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Flaticon Font -->
+    <link href="lib/flaticon/font/flaticon.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/style.min.css" rel="stylesheet">
+
+    <!-- Google APIs -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+</head>
+
+<style>
+    .children-3{
+        background-color: rgba(0, 0, 0, 0.9);
+        position:absolute;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 80px;0
+        border-radius: 15px;
+    }
+
+    button{
+        background-color: dodgerblue;
+        border: none;
+        padding: 15px;
+        width: 100%;
+        border-radius: 10px;
+        color: white;
+        cursor: pointer;
+    }
+
+</style>
+
+<body class="bg-white">
+    <!-- Navbar Start -->
+<div class="father">
+    <div class="children-1 container-fluid p-0 nav-bar">
+        <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+            <a href="" class="navbar-brand">
+                <h1 class="m-0 display-4 font-weight-bold text-uppercase text-white">SafeHome</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <div class="navbar-nav ml-auto p-4 bg-secondary">
+                    <a href="index.html" class="nav-item nav-link">Início</a>
+                    <a href="minha-casa.html" class="nav-item nav-link active">Minha Casa</a>
+                    <a href="meu-perfil.html" class="nav-item nav-link">Meu Perfil</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+    <div class="children-2 container-fluid page-header mb-5">
+        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
+            <h4 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase font-weight-bold">Minha Casa</h4>
+            <div class="d-inline-flex">
+                <p class="m-0 text-white"><a class="text-white" href="index.html">Início</a></p>
+                <p class="m-0 text-white px-2">/</p>
+                <p class="m-0 text-white">Minha Casa</p>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- GYM Feature Start -->
+    <div class="children-3 container pt-5">
+        <div class="d-flex flex-column text-center mb-5">
+            <h4 class="text-primary font-weight-bold">Editar Ambiente Cadastrado</h4>
+            <h4 class="display-4 font-weight-bold">Editar Ambiente</h4>
+        </div>
+        <div class="row">
+                <div class="container">
+                    <div class= "login-form">
+                        <form method="post" class="form-signin"></form>
+                            <input name="acao" type="hidden" value="inserir"/>
+                                <div class="form-group">
+                                    <input class="form-control" id="nome" name="nome-ambiente" type="text" placeholder="Nome" value="Portão">
+                                    <input class="form-control" id="porta" name="porta-arduino" type="text" placeholder="Número Porta Arduino" value="A2">
+                                </div>
+                                <button>Salvar</button>
+                        </form>
+                        <a href="minha-casa.html">Cancelar</a>
+                    </div>
+                </div>  
+        </div>
+    </div>
+</div>    
+    <!-- GYM Feature End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-outline-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+

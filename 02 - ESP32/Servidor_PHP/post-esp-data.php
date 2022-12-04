@@ -13,11 +13,9 @@
 
 $servername = "localhost";
 
-// REPLACE with your Database name
+// Database name, user and password
 $dbname = "mktstu21_breno";
-// REPLACE with Database user
 $username = "mktstu21_breno";
-// REPLACE with Database user password
 $password = "Y4J[OB,znVZ]";
 
 // Keep this API Key value to be compatible with the ESP32 code provided in the project page. 
@@ -40,14 +38,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Connection failed: " . $conn->connect_error);
         } 
         
-        $sql = "INSERT INTO DETECCOES_MOVIMENTO (MOV_VALUE1, AMB_ID)
-        VALUES ('" . $MOV_VALUE1 . "', '" . $AMB_ID . "')";
-        
-        if ($conn->query($sql) === TRUE) {
-            echo "New record created successfully";
-        } 
-        else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+        $sql2 = "SELECT CAS_SENSOR_LIGADO FROM CASA";
+
+        if ($result2 = $conn->query($sql2)) {
+            $row2 = $result2->fetch_assoc();
+            $row_sensor_ligado = $row2["CAS_SENSOR_LIGADO"];
+        }
+
+        if($row_sensor_ligado == 1){
+            $sql = "INSERT INTO DETECCOES_MOVIMENTO (MOV_VALUE1, AMB_ID)
+            VALUES ('" . $MOV_VALUE1 . "', '" . $AMB_ID . "')";
+            
+            if ($conn->query($sql) === TRUE) {
+                echo "New record created successfully";
+            } 
+            else {
+                echo "Error: " . $sql . "<br>" . $conn->error;
+            }
         }
     
         $conn->close();

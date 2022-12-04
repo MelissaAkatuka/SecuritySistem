@@ -15,34 +15,41 @@
 
     $servername = "localhost";
 
-    // REPLACE with your Database name
+    // Database name
     $dbname = "mktstu21_breno";
-    // REPLACE with Database user
+    // Database user
     $username = "mktstu21_breno";
-    // REPLACE with Database user password
+    // Database user password
     $password = "Y4J[OB,znVZ]";
 
-    // Create connection
+    // If the sensor is active, saves data from ESP32 in the database
+    
+      //Another way to compare, if the above is equal to 0 means the two strings match perfectly
+      //if(strncmp('1', $sql2) == 0)
+
+      // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
     // Check connection
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     } 
 
-    $sql = "SELECT MOV_ID, MOV_VALUE1, MOV_ULTIMA_DETECCAO FROM DETECCOES_MOVIMENTO ORDER BY id DESC";
+    $sql = "SELECT MOV_ID, MOV_VALUE1, MOV_ULTIMA_DETECCAO, AMB_ID FROM DETECCOES_MOVIMENTO ORDER BY id DESC";
 
     echo '<table cellspacing="5" cellpadding="5">
             <tr> 
               <td>ID</td> 
-              <td>Value 1</td> 
-              <td>MOV_ULTIMA_DETECCAO</td> 
+              <td>VALUE 1</td> 
+              <td>ULTIMA_DETECCAO</td> 
+              <td>AMB_ID</td>
             </tr>';
       
       if ($result = $conn->query($sql)) {
           while ($row = $result->fetch_assoc()) {
-              // $row_id = $row["id"];
+              $row_id = $row["id"];
               $row_value1 = $row["MOV_VALUE1"];
               $row_reading_time = $row["MOV_ULTIMA_DETECCAO"];
+              $row_space = $row["AMB_ID"]; 
               // Uncomment to set timezone to - 1 hour (you can change 1 to any number)
               //$row_reading_time = date("Y-m-d H:i:s", strtotime("$row_reading_time - 1 hours"));
             
@@ -50,9 +57,10 @@
               //$row_reading_time = date("Y-m-d H:i:s", strtotime("$row_reading_time + 4 hours"));
             
               echo '<tr> 
-                      // <td>' . $row_id . '</td> 
+                      <td>' . $row_id . '</td> 
                       <td>' . $row_value1 . '</td> 
                       <td>' . $row_reading_time . '</td> 
+                      <td>' . $row_space . '</td> 
                     </tr>';
           }
           $result->free();

@@ -9,12 +9,12 @@
 #endif
 
 // Credenciais da Rede Wifi
-const char* ssid = "Shadowhunter-2.4G";
-const char* password = "AmrenMor@22";
+const char* ssid = "Wifi-Name";
+const char* password = "Wifi-Password";
 
 // Variáveis Globais para Conexão ao Wifi e ao HTTP
 boolean wifiConnected = false;
-WiFiClient clientWifi;
+WiFiClient clientWifi; 
 String httpRequestData;
 const int  port = 80;  
 unsigned long timeout;
@@ -30,7 +30,8 @@ String apiKeyValue = "tPmAT5Ab3j7F9";
 //variables for the ESP
 int motionSensor1 = 2;
 int motionSensor2 = 34;
-int led = 12;
+int led1 = 12;
+int led2 = 14;
 
 int lastMovement1 = 0;
 int lastMovement2 = 0;
@@ -39,7 +40,8 @@ void turnOnLEDAndPIR()
 {
 pinMode(motionSensor1, INPUT);
 pinMode(motionSensor2, INPUT);
-pinMode(led, OUTPUT);
+pinMode(led1, OUTPUT);
+pinMode(led2, OUTPUT);
 }
 
 //Função connectWifihanged(): Controla conexão Wifi
@@ -131,7 +133,7 @@ void setup() {
   {
     while (1)
     {
-      Serial.println("Não é possóvel conectar ao Wifi. Por favor, verifique os dados e reinicie o ESP.");
+      Serial.println("Não é possível conectar ao Wifi. Por favor, verifique os dados e reinicie o ESP.");
       delay(2500);
     }
   }
@@ -144,24 +146,25 @@ void loop() {
 
   if(lastMovement1 == HIGH && wifiConnected) {
      Serial.println("Motion detected!!! (Sensor 1)");
-     digitalWrite(led, HIGH);
+     digitalWrite(led1, HIGH);
 
      if(wifiConnected){
-      httpRequestData = "api_key=" + apiKeyValue + "&AMB_ID=2" + "&MOV_VALUE1=OK";
+      httpRequestData = "api_key=" + apiKeyValue + "&AMB_ID=2" + "&MOV_VALUE1=SENSOR 1";
       doPostRequisition();
       delay(10000);
       }   
   } else if(lastMovement2 == HIGH && wifiConnected) {
      Serial.println("Motion detected!!! (Sensor 2)");
-     digitalWrite(led, HIGH);
+     digitalWrite(led2, HIGH);
 
      if(wifiConnected){
-      httpRequestData = "api_key=" + apiKeyValue + "&AMB_ID=34" + "&MOV_VALUE1=OK";
+      httpRequestData = "api_key=" + apiKeyValue + "&AMB_ID=3" + "&MOV_VALUE1=SENSOR 2";
       doPostRequisition();
       delay(10000);
       }   
   } else {
      Serial.println("Motion stopped...");
-     digitalWrite(led, LOW);
+     digitalWrite(led1, LOW);
+     digitalWrite(led2, LOW);
   }
 }  
